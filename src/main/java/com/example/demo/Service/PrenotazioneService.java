@@ -13,7 +13,7 @@ import com.example.demo.Repository.PrenotazioneRepository;
 public class PrenotazioneService {
 
     @Autowired
-    PrenotazioneRepository prenotationrep;
+    private PrenotazioneRepository prenotationrep;
 
     public Prenotazione save(Prenotazione prenotation){
 

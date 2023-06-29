@@ -13,7 +13,7 @@ import com.example.demo.Repository.EdificioRepository;
 public class EdificioService {
 
     @Autowired
-    EdificioRepository buildingrep;
+    private EdificioRepository buildingrep;
 
     public Edificio save(Edificio building){
 

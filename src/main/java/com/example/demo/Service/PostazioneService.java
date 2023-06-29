@@ -13,7 +13,7 @@ import com.example.demo.Repository.PostazioneRepository;
 public class PostazioneService {
 
     @Autowired
-    PostazioneRepository roomrep;
+    private PostazioneRepository roomrep;
 
     public Postazione save(Postazione room){
 

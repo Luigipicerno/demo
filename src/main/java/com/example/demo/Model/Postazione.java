@@ -1,6 +1,7 @@
 package com.example.demo.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
@@ -10,6 +11,7 @@ import lombok.Data;
 public class Postazione{
 
     @Id
+    @GeneratedValue
     private String id;
     private String descrizione;
     private Integer nposti;

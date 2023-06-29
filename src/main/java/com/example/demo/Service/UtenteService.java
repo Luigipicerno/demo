@@ -12,7 +12,7 @@ import com.example.demo.Repository.UtenteRepository;
 public class UtenteService {
     
     @Autowired
-    UtenteRepository userrep;
+    private UtenteRepository userrep;
 
     public Utente save(Utente user){
 
