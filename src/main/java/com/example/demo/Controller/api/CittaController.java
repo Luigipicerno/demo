@@ -20,7 +20,7 @@ public class CittaController {
     final String versionV1 = "v1";
     final String versionV2 = "v2";
 
-    @GetMapping(versionV2 + "/cittas")
+    @GetMapping(versionV1 + "/cittas")
     public ResponseEntity<List<Citta>> getAllCittas(){
 
         List<Citta> result = cittaService.findAll();

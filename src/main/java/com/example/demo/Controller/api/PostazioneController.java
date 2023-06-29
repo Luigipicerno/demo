@@ -20,7 +20,7 @@ public class PostazioneController {
     final String versionV1 = "v1";
     final String versionV2 = "v2";
 
-    @GetMapping(versionV2 + "/postaziones")
+    @GetMapping(versionV1 + "/postaziones")
     public ResponseEntity<List<Postazione>> getAllPostaziones(){
 
         List<Postazione> result = postazioneService.findAll();

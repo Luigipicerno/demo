@@ -20,7 +20,7 @@ public class UtenteController {
     final String versionV1 = "v1";
     final String versionV2 = "v2";
 
-    @GetMapping(versionV2 + "/utentes")
+    @GetMapping(versionV1 + "/utentes")
     public ResponseEntity<List<Utente>> getAllUtentes(){
 
         List<Utente> result = utenteService.findAll();

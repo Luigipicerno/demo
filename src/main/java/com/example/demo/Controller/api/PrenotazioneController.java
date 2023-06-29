@@ -20,7 +20,7 @@ public class PrenotazioneController {
     final String versionV1 = "v1";
     final String versionV2 = "v2";
 
-    @GetMapping(versionV2 + "/prenotaziones")
+    @GetMapping(versionV1 + "/prenotaziones")
     public ResponseEntity<List<Prenotazione>> getAllPrenotaziones(){
 
         List<Prenotazione> result = prenotazioneService.findAll();

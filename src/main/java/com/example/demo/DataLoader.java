@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.Controller.api.CittaController;
 import com.example.demo.Model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -29,7 +30,7 @@ public class DataLoader implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        
+
         Citta c1 = new Citta("Palermo");
         cs.save(c1);
 
