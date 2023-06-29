@@ -29,7 +29,7 @@ public class EdificioController {
     }
 
     @GetMapping(versionV1 + "/edificio")
-    public ResponseEntity<Optional<Edificio>> getEdificioByID(@RequestParam Long id){
+    public ResponseEntity<Optional<Edificio>> getEdificioByID(@PathVariable Long id){
 
         Optional<Edificio> result = edificioService.findByID(id);
 

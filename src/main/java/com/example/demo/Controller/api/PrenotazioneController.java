@@ -28,8 +28,8 @@ public class PrenotazioneController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping(versionV1 + "/prenotazione")
-    public ResponseEntity<Optional<Prenotazione>> getPrenotazioneByID(@RequestParam Long id){
+    @GetMapping(versionV1 + "/prenotazione/{id}")
+    public ResponseEntity<Optional<Prenotazione>> getPrenotazioneByID(@PathVariable Long id){
 
         Optional<Prenotazione> result = prenotazioneService.findByID(id);
 

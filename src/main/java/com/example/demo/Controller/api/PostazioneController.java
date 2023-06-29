@@ -28,8 +28,8 @@ public class PostazioneController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping(versionV1 + "/postazione")
-    public ResponseEntity<Optional<Postazione>> getPostazioneByID(@RequestParam Long id){
+    @GetMapping(versionV1 + "/postazione/{id}")
+    public ResponseEntity<Optional<Postazione>> getPostazioneByID(@PathVariable Long id){
 
         Optional<Postazione> result = postazioneService.findByID(id);
 

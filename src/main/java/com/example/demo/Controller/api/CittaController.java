@@ -20,6 +20,7 @@ public class CittaController {
     final String versionV1 = "v1";
     final String versionV2 = "v2";
 
+
     @GetMapping(versionV1 + "/cittas")
     public ResponseEntity<List<Citta>> getAllCittas(){
 
@@ -28,8 +29,10 @@ public class CittaController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping(versionV1 + "/citta")
-    public ResponseEntity<Optional<Citta>> getCittaByID(@RequestParam Long id){
+
+
+    @GetMapping(versionV1 + "/citta/{id}")
+    public ResponseEntity<Optional<Citta>> getCittaByID(@PathVariable Long id){
 
         Optional<Citta> result = cittaService.findByID(id);
 
@@ -39,6 +42,7 @@ public class CittaController {
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+
 
     @PostMapping(versionV1 + "/citta")
     public ResponseEntity<Citta> createCitta(@RequestBody Citta newCitta){

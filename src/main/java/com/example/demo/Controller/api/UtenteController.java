@@ -28,8 +28,8 @@ public class UtenteController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping(versionV1 + "/utente")
-    public ResponseEntity<Optional<Utente>> getUtenteByID(@RequestParam Long id){
+    @GetMapping(versionV1 + "/utente/{id}")
+    public ResponseEntity<Optional<Utente>> getUtenteByID(@PathVariable Long id){
 
         Optional<Utente> result = utenteService.findByID(id);
 
