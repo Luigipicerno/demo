@@ -36,7 +36,7 @@ public class DataLoader implements CommandLineRunner{
         Edificio e1 = new Edificio("Empire","Via dubai",c1);
         es.save(e1);
 
-        Postazione p1 = new Postazione("Bella stanza",5, Tipo.OPENSPACE,e1);
+        Postazione p1 = new Postazione("1","Bella stanza",5, Tipo.OPENSPACE,e1);
         pos.save(p1);
 
         Utente u1 = new Utente("loregibi","Lorenzo","lg@gmail.com","800A");

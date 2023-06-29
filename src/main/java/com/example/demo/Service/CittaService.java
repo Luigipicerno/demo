@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class CittaService {
         return cityrep.save(city);
     }
 
-    public void update(Citta city){
+    public Citta update(Citta city){
 
         Citta c = cityrep.findById(city.getId()).orElse(null);
 
@@ -27,19 +28,23 @@ public class CittaService {
 
             cityrep.save(c);
         }
+        return c;
     }
 
-    public void delete(Long id){
+    public void deleteByID(Long id){
 
         cityrep.deleteById(id);
     }
 
-    public Citta get(Long id){
+    public Optional<Citta> findByID(Long id){
 
-        return cityrep.findById(id).orElse(null);
+        if(id == 0)
+            return Optional.empty();
+
+        return cityrep.findById(id);
     }
 
-    public List<Citta> getAll(){
+    public List<Citta> findAll(){
         
         return cityrep.findAll();
     }

@@ -1,12 +1,12 @@
 package com.example.demo.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Model.Postazione;
-import com.example.demo.Model.Utente;
 import com.example.demo.Repository.PostazioneRepository;
 
 @Service
@@ -20,7 +20,7 @@ public class PostazioneService {
         return roomrep.save(room);
     }
 
-     public void update(Postazione room){
+     public Postazione update(Postazione room){
 
         Postazione r = roomrep.findById(room.getId()).orElse(null);
 
@@ -28,19 +28,20 @@ public class PostazioneService {
 
             roomrep.save(room);
         }
+        return r;
     }
 
-    public void delete(String id){
+    public void deleteByID(Long id){
 
         roomrep.deleteById(id);
     }
 
-    public Postazione get(String id){
+    public Optional<Postazione> findByID(Long id){
 
-        return roomrep.findById(id).orElse(null);
+        return roomrep.findById(id);
     }
 
-    public List<Postazione> getAll(){
+    public List<Postazione> findAll(){
         
         return roomrep.findAll();
     }

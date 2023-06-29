@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class EdificioService {
         return buildingrep.save(building);
     }
 
-     public void update(Edificio e){
+     public Edificio update(Edificio e){
 
         Edificio edi = buildingrep.findById(e.getId()).orElse(null);
 
@@ -28,19 +29,20 @@ public class EdificioService {
 
             buildingrep.save(e);
         }
+        return edi;
     }
 
-    public void delete(Long id){
+    public void deleteByID(Long id){
 
         buildingrep.deleteById(id);
     }
 
-    public Edificio get(Long id){
+    public Optional<Edificio> findByID(Long id){
 
-        return buildingrep.findById(id).orElse(null);
+        return buildingrep.findById(id);
     }
 
-    public List<Edificio> getAll(){
+    public List<Edificio> findAll(){
         
         return buildingrep.findAll();
     }

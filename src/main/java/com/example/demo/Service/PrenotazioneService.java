@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class PrenotazioneService {
         return prenotationrep.save(prenotation);
     }
 
-     public void update(Prenotazione prenotation){
+     public Prenotazione update(Prenotazione prenotation){
 
         Prenotazione pren = prenotationrep.findById(prenotation.getId()).orElse(null);
 
@@ -28,19 +29,20 @@ public class PrenotazioneService {
 
             prenotationrep.save(pren);
         }
+        return pren;
     }
 
-    public void delete(Long id){
+    public void deleteByID(Long id){
 
         prenotationrep.deleteById(id);
     }
 
-    public Prenotazione get(Long id){
+    public Optional<Prenotazione> findByID(Long id){
 
-        return prenotationrep.findById(id).orElse(null);
+        return prenotationrep.findById(id);
     }
 
-    public List<Prenotazione> getAll(){
+    public List<Prenotazione> findAll(){
         
         return prenotationrep.findAll();
     }   
